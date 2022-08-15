@@ -1,4 +1,4 @@
-const mainAddress = `https://kku98057.github.io/test4/`;
+const mainAddress = `https://kku98057.github.io/test4/index.html`;
 
 function mainKakaoShare() {
   Kakao.Share.sendDefault({
@@ -8,8 +8,8 @@ function mainKakaoShare() {
       description: "나와 어울리는 고래는 무엇일까 ?",
       imageUrl: "https://kku98057.github.io/test4/asset/img/mainwhale.png",
       link: {
-        webUrl: "https://kku98057.github.io/test4/",
-        mobileWebUrl: "https://kku98057.github.io/test4/",
+        webUrl: "https://kku98057.github.io/test4/index.html",
+        mobileWebUrl: "https://kku98057.github.io/test4/index.html",
       },
     },
     // social: {
@@ -21,8 +21,8 @@ function mainKakaoShare() {
       {
         title: "나도 테스트 해보기!",
         link: {
-          webUrl: "https://kku98057.github.io/test4/",
-          mobileWebUrl: "https://kku98057.github.io/test4/",
+          webUrl: "https://kku98057.github.io/test4/index.html",
+          mobileWebUrl: "https://kku98057.github.io/test4/index.html",
         },
       },
     ],
