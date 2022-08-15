@@ -153,6 +153,9 @@ section > .container {
 .monitor_share {
   margin-top: 40px;
 }
+.kakaoShareBtn {
+  cursor: pointer;
+}
 .monitor_share_title {
   width: 243px;
   height: 23px;

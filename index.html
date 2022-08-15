@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="./asset/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        Kakao.init('d50d659c9a125d2d76ea5e0b39b1b44d');
+        Kakao.isInitialized();
+    </script>
     <title>Document</title>
 </head>
 
@@ -56,18 +61,18 @@
                             </label>
                             <input type="file" name="" id="upImg">
                             <p class="upImgText"></p>
-                            <button class="upBtn" onclick="predict()" type="button">
+                            <button class="upBtn" type="button">
                                 <span>시작하기</span>
                             </button>
                         </form>
                     </div>
                     <div class="monitor_share">
                         <div class="monitor_share_title">
-                            <h4 class="monitor_share_title_h">시작하기 전에 친구에게 공유하기!</h4>
+                            <h4 class="monitor_share_title_h ">시작하기 전에 친구에게 공유하기!</h4>
                         </div>
                         <ul class="monitor_share_sns">
-                            <li class="monitor_share_list monitor_share_kakao"><a href=""><img
-                                        src="./asset/img/kakao.png" alt=""></a></li>
+                            <li class="monitor_share_list monitor_share_kakao" onclick="mainKakaoShare()"><img
+                                    src="./asset/img/kakao.png" alt=""></li>
                             <li class="monitor_share_list monitor_share_instar"><a href=""><img
                                         src="./asset/img/insta.png" alt=""></a></li>
                             <li class="monitor_share_list monitor_share_facebook"><a href=""><img
@@ -101,8 +106,8 @@
                         <button class="result_btn" type="button">
                             <a href="/" class="result_btn_link">다른 사진도 해보기</a>
                         </button>
-                        <button class="result_btn" type="button">
-                            <span class="result_btn_link">친구들에게 공유하기</span>
+                        <button class="result_btn kakaoShareBtn" type="button">
+                            <span class="result_btn_link" onclick="resultKakaoShare()">친구들에게 공유하기</span>
                         </button>
                     </div>
                     <div class="combi">
@@ -127,16 +132,9 @@
             </section>
         </main>
     </div>
-
-
-    <!-- <div>Teachable Machine Image Model</div>
-    <button type="button" onclick="init()">Start</button>
-    <div id="webcam-container"></div>
-    <div id="label-container"></div> -->
-
     <script src="./asset/js/data.js"></script>
     <script src="./asset/js/ai.js"></script>
-    <script src="./asset/js/script.js"></script>
+    <script src="./asset/js/share.js"></script>
 </body>
 
 </html>
