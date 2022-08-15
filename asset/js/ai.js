@@ -19,13 +19,6 @@ async function init() {
   maxPredictions = model.getTotalClasses();
 
   // append elements to the DOM
-
-  labelContainer = document.getElementById("label-container");
-
-  for (let i = 0; i < 4; i++) {
-    // and class labels
-    labelContainer.appendChild(document.createElement("div"));
-  }
 }
 
 // run the webcam image through the image model
@@ -33,11 +26,19 @@ async function predict() {
   // predict can take in an image, video or canvas html element
   const image = document.querySelector("#faceImg");
   const prediction = await model.predict(image, false);
-
+  labelContainer = document.getElementById("label-container");
   let maxTopPrediction = [...prediction].sort((a, b) => {
     return b.probability - a.probability;
   });
-  console.log(maxTopPrediction);
+
+  //   key,text 추가
+  console.log(infoList);
+
+  prediction.forEach((predic, index) => {
+    predic.title = infoList[index].title;
+    predic.text = infoList[index].text;
+    predic.key = index;
+  });
 
   for (let i = 0; i < 4; i++) {
     const labelClass = document.createElement("div");
@@ -46,34 +47,25 @@ async function predict() {
     const classPrediction = `
     <div class="pointText">${maxTopPrediction[i].className}</div>
     <div class="pointDiv">
-        <div class="pointBar pointBar_1">
-            <div class="pointBar pointBar_2"></div>
-        </div>
+    
     </div>
-    <div class="pointText">${Math.round(
+    <div class="pointNub">${Math.round(
       maxTopPrediction[i].probability * 100
     )}%</div>`;
-    console.log(classPrediction);
 
-    // 여기부터 다시하기.
-    const pointBars = document.querySelectorAll(".pointBar_2");
-
-    pointBars.forEach((bars, index) => {
-      bars.style.width = `${
-        Math.round(maxTopPrediction[index].probability) * 100
-      }%`;
-    });
     labelClass.className = "label_class";
 
     const labelClasses = document.querySelectorAll(".label_class");
     labelClasses[i].innerHTML = classPrediction;
   }
-  //   key,text 추가
 
-  const text = ["asdf", "fghj", "3asd"];
-  prediction.forEach((predic, index) => {
-    predic.text = text[index];
-    predic.key = index;
+  // pointer Bar
+  const pointBars = document.querySelectorAll(".pointDiv");
+  pointBars.forEach((bar, index) => {
+    console.log(maxTopPrediction[index]);
+    bar.style.width = `${Math.round(
+      maxTopPrediction[index].probability * 100
+    )}%`;
   });
 
   //   가장 큰 수
@@ -85,4 +77,11 @@ async function predict() {
   const resultImg = document.querySelector("#resultImg");
   const imgSrc = `./asset/img/image-${maxNub.key}.png`;
   resultImg.src = imgSrc;
+
+  // title,text
+  // title
+  const resultTitle = document.querySelector(".result_title_p");
+  const resutlText = document.querySelector(".result_title_p3");
+  resultTitle.innerHTML = `${maxTopPrediction[0].title}`;
+  resutlText.innerHTML = `${maxTopPrediction[0].text}`;
 }

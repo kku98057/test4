@@ -27,7 +27,7 @@ function handleSelected(e) {
     addListeners(reader);
     reader.readAsDataURL(selectedFile);
     upImgText.style.display = "block";
-    upImgText.innerHTML = "이미지를 인식 중 입니다. 잠시만 기다려주세요.";
+    upImgText.innerHTML = "이미지를 인식 중 입니다.<br> 잠시만 기다려주세요.";
     init().then(() => {
       startBtn.style.display = "flex";
       setTimeout(() => {
