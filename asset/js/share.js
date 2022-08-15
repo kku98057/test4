@@ -28,7 +28,7 @@ function mainKakaoShare() {
 }
 function resultKakaoShare() {
   const nowPage = resultImg.alt;
-  const address = `https://kku98057.github.io/test4/page_${nowPage}.html`;
+  const address = `https://kku98057.github.io/test4/page/page_${nowPage}.html`;
 
   Kakao.Share.sendDefault({
     objectType: "feed",
