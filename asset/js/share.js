@@ -1,4 +1,4 @@
-const mainAddress = `https://kku98057.github.io/test4/`;
+const mainAddress = `https://kku98057.github.io/test4/index.html`;
 
 function mainKakaoShare() {
   Kakao.Share.sendDefault({
