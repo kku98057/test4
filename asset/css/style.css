@@ -158,11 +158,12 @@ section > .container {
 }
 .monitor_share_title {
   width: 243px;
-  height: 23px;
+  height: 33px;
+
   display: flex;
   align-items: center;
   background-color: #2666bc;
-  border-radius: 10px;
+  border-radius: 30px;
   justify-content: center;
 }
 .monitor_share_title_h {
@@ -179,6 +180,7 @@ section > .container {
 .monitor_share_list {
   width: 36px;
   height: 36px;
+  cursor: pointer;
 }
 /* result */
 

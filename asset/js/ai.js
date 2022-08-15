@@ -59,13 +59,16 @@ async function predict() {
   }
 
   // pointer Bar
-  const pointBars = document.querySelectorAll(".pointDiv");
-  pointBars.forEach((bar, index) => {
-    console.log(maxTopPrediction[index]);
-    bar.style.width = `${Math.round(
-      maxTopPrediction[index].probability * 100
-    )}%`;
-  });
+  setTimeout(() => {
+    const pointBars = document.querySelectorAll(".pointDiv");
+    const tl = gsap.timeline();
+    pointBars.forEach((bar, index) => {
+      tl.to(bar, {
+        width: `${Math.round(maxTopPrediction[index].probability * 100)}%`,
+        stagger: 0.3,
+      });
+    });
+  }, 1000);
 
   //   가장 큰 수
 
@@ -136,6 +139,7 @@ function startBtnHandler() {
   upImgText.innerHTML = `데이터를 받아오고 있습니다.<br> 잠시만 기다려주세요`;
   setTimeout(() => {
     predict();
+    uploadPage.style.transition = "all 0.3s";
     uploadPage.style.opacity = 0;
     setTimeout(() => {
       uploadPage.style.display = "none";
@@ -143,6 +147,7 @@ function startBtnHandler() {
 
     resultPage.style.display = "block";
     setTimeout(() => {
+      resultPage.style.transition = "all 0.3s";
       resultPage.style.opacity = 1;
     }, 500);
   }, 300);
@@ -160,3 +165,5 @@ function genderBtnHandler() {
     gender.classList.toggle("active");
   });
 }
+
+//

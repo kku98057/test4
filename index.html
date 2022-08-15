@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./asset/css/reset.css">
     <link rel="stylesheet" href="./asset/css/style.css">
+    <script src="./asset/js/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
@@ -107,9 +108,7 @@
                 </div>
                 <div class="container result_con2">
                     <div class="result_btns">
-                        <button class="result_btn" type="button">
-                            <a href="/" class="result_btn_link">다른 사진도 해보기</a>
-                        </button>
+                        <a href="/" class="result_btn result_btn_link">나도 해보기</a>
                         <button class="result_btn kakaoShareBtn" type="button">
                             <span class="result_btn_link" onclick="resultKakaoShare()">친구들에게 공유하기</span>
                         </button>
@@ -139,6 +138,7 @@
     <script src="./asset/js/data.js"></script>
     <script src="./asset/js/ai.js"></script>
     <script src="./asset/js/share.js"></script>
+
 </body>
 
 </html>

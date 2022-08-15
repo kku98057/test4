@@ -9,6 +9,7 @@ function mainKakaoShare() {
       imageUrl: "https://kku98057.github.io/test4/asset/img/mainwhale.png",
       link: {
         webUrl: "https://kku98057.github.io/test4/",
+        mobileWebUrl: "https://kku98057.github.io/test4/",
       },
     },
     // social: {
@@ -21,6 +22,7 @@ function mainKakaoShare() {
         title: "나도 테스트 해보기!",
         link: {
           webUrl: "https://kku98057.github.io/test4/",
+          mobileWebUrl: "https://kku98057.github.io/test4/",
         },
       },
     ],
@@ -50,12 +52,14 @@ function resultKakaoShare() {
         title: "친구꺼 구경하기!",
         link: {
           webUrl: address,
+          mobileWebUrl: address,
         },
       },
       {
         title: "나도 테스트 해보기!",
         link: {
           webUrl: mainAddress,
+          mobileWebUrl: mainAddress,
         },
       },
     ],
