@@ -1,3 +1,8 @@
+:root {
+  /* font */
+  --pyeongChang-bold: "PyeongChang-Bold";
+  --KyoboHand: "KyoboHand";
+}
 html,
 body {
   height: 100%;
@@ -11,11 +16,15 @@ header {
 }
 section {
   width: 100%;
-  height: 100vh;
+  height: auto;
+
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+section > .container {
+  padding: 136px 48px 80px 48px;
 }
 .logo {
   text-align: center;
@@ -39,20 +48,68 @@ section {
 
 /* monitor_img */
 .monitor_img {
-  display: none;
+  /* display: none; */
+}
+.monitor_con {
+  /* background-color: #f2f2f2; */
 }
 .monitor_img_title {
   text-align: center;
-  margin-bottom: 80px;
 }
 .monitor_img_title_h {
-  font-size: 80px;
+  width: 311px;
   color: #1d1d1d;
-  margin-bottom: 30px;
+  margin-bottom: 12px;
 }
 .monitor_img_title_p {
-  font-size: 25px;
-  color: #1d1d1d;
+  font-size: 14.7px;
+  font-weight: bold;
+  color: #2666bc;
+  font-family: var(--pyeongChang-bold);
+}
+.gender {
+  margin: 37px 0 34px 0;
+}
+.gender_title_h {
+  color: #2666bc;
+  font-size: 21.5px;
+  font-family: var(--pyeongChang-bold);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.gender_btnswrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gender_btn {
+  margin: 0 13px;
+  width: 65px;
+  height: 29px;
+  border-radius: 65px;
+  background-color: #2666bc;
+  position: relative;
+}
+.gender_btn_toggle {
+  width: 23px;
+  height: 23px;
+  background-color: #ffff;
+  border-radius: 23px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(5px, -50%);
+  transition: transform 0.1s;
+  cursor: pointer;
+}
+.gender_btn_toggle.active {
+  transform: translate(-29px, -50%);
+}
+.gender_img {
+  width: 15px;
+}
+.gender_img.active {
+  filter: grayscale(1);
 }
 .monitor_img_content form {
   display: flex;
@@ -64,14 +121,16 @@ section {
   display: none;
 }
 .uploadImg {
-  width: 350px;
+  width: 431px;
   cursor: pointer;
 }
 
 .upImgText {
   margin: 50px 0;
   text-align: center;
+  display: none;
   font-size: 18px;
+  font-family: var(--pyeongChang-bold);
 }
 .upBtn {
   outline: 0;
@@ -81,7 +140,7 @@ section {
   cursor: pointer;
   padding: 10px 30px;
   color: #fff;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   background-color: rgb(153, 218, 218);
@@ -90,13 +149,41 @@ section {
   margin-top: 5px;
   font-size: 20px;
 }
+
+.monitor_share {
+  margin-top: 40px;
+}
+.monitor_share_title {
+  width: 243px;
+  height: 23px;
+  display: flex;
+  align-items: center;
+  background-color: #2666bc;
+  border-radius: 10px;
+  justify-content: center;
+}
+.monitor_share_title_h {
+  font-size: 15px;
+  color: #fff;
+  font-family: var(--pyeongChang-bold);
+}
+.monitor_share_sns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 22px;
+}
+.monitor_share_list {
+  width: 36px;
+  height: 36px;
+}
 /* result */
 
 .result {
   height: auto;
   flex-direction: column;
-  /* display: none; */
-  /* opacity: 0; */
+  display: none;
+  opacity: 0;
 }
 .result_con {
   padding: 160px 48px 48px 48px;
@@ -126,7 +213,7 @@ section {
   font-size: 15px;
   line-height: 1.33;
   color: #2666bc;
-  font-family: "KyoboHand";
+  font-family: var(--KyoboHand);
 }
 #label-container {
   width: 100%;
@@ -151,9 +238,11 @@ section {
 .pointBar {
   width: 100%;
   height: 11px;
-
   border-radius: 10px;
   position: relative;
+}
+.pointBar_1 {
+  background-color: #aabb;
 }
 .pointBar_2 {
   background-color: #2666bc;
@@ -184,10 +273,10 @@ section {
   justify-content: center;
   cursor: pointer;
 }
-.result_btn span {
+.result_btn_link {
   font-size: 16px;
   color: #fff;
-  font-family: "PyeongChang-Bold";
+  font-family: var(--pyeongChang-bold);
 }
 .result_con2 {
   padding: 48px;
@@ -213,7 +302,7 @@ section {
   border-radius: 15.5px;
   display: flex;
   align-items: center;
-  font-family: "PyeongChang-Bold";
+  font-family: var(--pyeongChang-bold);
   justify-content: center;
   color: #fff;
   margin-top: 15px;

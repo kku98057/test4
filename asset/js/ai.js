@@ -4,7 +4,7 @@
 // the link to your model provided by Teachable Machine export panel
 const URL = "https://teachablemachine.withgoogle.com/models/tFfA8oqgh/";
 
-let model, webcam, labelContainer, maxPredictions;
+let model, webcam, labelContainer, maxPredictions, prediction;
 
 // Load the image model and setup the webcam
 async function init() {
@@ -17,13 +17,12 @@ async function init() {
   // Note: the pose library adds "tmImage" object to your window (window.tmImage)
   model = await tmImage.load(modelURL, metadataURL);
   maxPredictions = model.getTotalClasses();
-  console.log(maxPredictions);
 
   // append elements to the DOM
 
   labelContainer = document.getElementById("label-container");
 
-  for (let i = 0; i < maxPredictions; i++) {
+  for (let i = 0; i < 4; i++) {
     // and class labels
     labelContainer.appendChild(document.createElement("div"));
   }
@@ -33,27 +32,41 @@ async function init() {
 async function predict() {
   // predict can take in an image, video or canvas html element
   const image = document.querySelector("#faceImg");
-
   const prediction = await model.predict(image, false);
-  for (let i = 0; i < maxPredictions; i++) {
+
+  let maxTopPrediction = [...prediction].sort((a, b) => {
+    return b.probability - a.probability;
+  });
+  console.log(maxTopPrediction);
+
+  for (let i = 0; i < 4; i++) {
+    const labelClass = document.createElement("div");
+
+    labelContainer.append(labelClass);
     const classPrediction = `
-    <div class="pointText">${prediction[i].className}</div>
+    <div class="pointText">${maxTopPrediction[i].className}</div>
     <div class="pointDiv">
         <div class="pointBar pointBar_1">
             <div class="pointBar pointBar_2"></div>
         </div>
     </div>
     <div class="pointText">${Math.round(
-      prediction[i].probability * 100
+      maxTopPrediction[i].probability * 100
     )}%</div>`;
+    console.log(classPrediction);
 
-    labelContainer.childNodes[i].innerHTML = classPrediction;
-    labelContainer.childNodes[i].className = "label_class";
+    // 여기부터 다시하기.
     const pointBars = document.querySelectorAll(".pointBar_2");
 
-    pointBars.forEach((pointBar, i) => {
-      pointBar.style.width = `${Math.round(prediction[i].probability * 100)}%`;
+    pointBars.forEach((bars, index) => {
+      bars.style.width = `${
+        Math.round(maxTopPrediction[index].probability) * 100
+      }%`;
     });
+    labelClass.className = "label_class";
+
+    const labelClasses = document.querySelectorAll(".label_class");
+    labelClasses[i].innerHTML = classPrediction;
   }
   //   key,text 추가
 
@@ -62,12 +75,13 @@ async function predict() {
     predic.text = text[index];
     predic.key = index;
   });
-  console.log(prediction);
+
   //   가장 큰 수
+
   let maxNub = prediction.reduce((pre, next) => {
     return pre.probability < next.probability ? next : pre;
   });
-  console.log(maxNub);
+
   const resultImg = document.querySelector("#resultImg");
   const imgSrc = `./asset/img/image-${maxNub.key}.png`;
   resultImg.src = imgSrc;

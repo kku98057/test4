@@ -26,9 +26,15 @@ function handleSelected(e) {
   if (selectedFile) {
     addListeners(reader);
     reader.readAsDataURL(selectedFile);
+    upImgText.style.display = "block";
     upImgText.innerHTML = "이미지를 인식 중 입니다. 잠시만 기다려주세요.";
     init().then(() => {
-      startBtn.style.opacity = 1;
+      startBtn.style.display = "flex";
+      setTimeout(() => {
+        startBtn.style.transition = "opacity 0.3s";
+        startBtn.style.opacity = 1;
+      }, 500);
+
       upImgText.innerHTML = "스타트 버튼을 클릭해주세요.";
     });
   }
@@ -48,4 +54,17 @@ function startBtnHandler() {
   setTimeout(() => {
     resultPage.style.opacity = 1;
   }, 500);
+}
+// genderBtn
+const genderBtn = document.querySelector(".gender_btn");
+const genderToggle = document.querySelector(".gender_btn_toggle");
+let gender = "man";
+genderBtn.addEventListener("click", genderBtnHandler);
+
+function genderBtnHandler() {
+  const gender = document.querySelectorAll(".gender_img");
+  genderToggle.classList.toggle("active");
+  gender.forEach((gender) => {
+    gender.classList.toggle("active");
+  });
 }

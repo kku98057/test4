@@ -24,24 +24,59 @@
         </header>
         <main>
             <section class="monitor_img">
-                <div class="container">
+                <div class="container monitor_con">
                     <div class="monitor_img_title">
-                        <h1 class="monitor_img_title_h">당신과 닮은 고래는 ?!</h1>
-                        <p class="monitor_img_title_p">나와 닮은 고래를 알아보고 특성도 함께 봐볼까?</p>
+                        <h2 class="monitor_img_title_h">
+                            <img src="./asset/img/mainwhale.png" alt="monitor_img">
+                        </h2>
+                        <p class="monitor_img_title_p">나의 사진으로 알아보는 인공지능 고래테스트</p>
+                    </div>
+                    <div class="gender">
+                        <div class="gender_title">
+                            <h3 class="gender_title_h">성별을 선택하세요.</h3>
+                        </div>
+                        <div class="gender_btnswrap">
+                            <div class="gender_img active" id="">
+                                <img src="./asset/img/m.png" alt="man">
+                            </div>
+                            <div class="gender_btn">
+                                <div class="gender_btn_toggle"></div>
+                            </div>
+                            <div class="gender_img" id="">
+                                <img src="./asset/img/w.png" alt="women">
+                            </div>
+                        </div>
                     </div>
                     <div class="monitor_img_content">
                         <form action="">
                             <label for="upImg">
                                 <div class="uploadImg">
-                                    <img src="./asset/img/upload.svg" alt="up" id="faceImg">
+                                    <img src="./asset/img/upload.png" alt="up" id="faceImg">
                                 </div>
                             </label>
                             <input type="file" name="" id="upImg">
-                            <p class="upImgText">이미지를 업로드 하세요 !</p>
+                            <p class="upImgText"></p>
                             <button class="upBtn" onclick="predict()" type="button">
                                 <span>시작하기</span>
                             </button>
                         </form>
+                    </div>
+                    <div class="monitor_share">
+                        <div class="monitor_share_title">
+                            <h4 class="monitor_share_title_h">시작하기 전에 친구에게 공유하기!</h4>
+                        </div>
+                        <ul class="monitor_share_sns">
+                            <li class="monitor_share_list monitor_share_kakao"><a href=""><img
+                                        src="./asset/img/kakao.png" alt=""></a></li>
+                            <li class="monitor_share_list monitor_share_instar"><a href=""><img
+                                        src="./asset/img/insta.png" alt=""></a></li>
+                            <li class="monitor_share_list monitor_share_facebook"><a href=""><img
+                                        src="./asset/img/facebook.png" alt=""></a></li>
+                            <li class="monitor_share_list monitor_share_twitter"><a href=""><img
+                                        src="./asset/img/twitter.png" alt=""></a></li>
+                            <li class="monitor_share_list monitor_share_radit"><a href=""><img
+                                        src="./asset/img/redit.png" alt=""></a></li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -63,8 +98,8 @@
                         </p>
                     </div>
                 </div>
-                <div id="label-container">
-                    <div class="label_class">
+                <div id="label-container" class="container">
+                    <!-- <div class="label_class">
                         <div class="pointText">범고래</div>
                         <div class="pointDiv">
                             <div class="pointBar pointBar_1">
@@ -99,21 +134,21 @@
                             </div>
                         </div>
                         <div class="pointText">73%</div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="container result_con2">
                     <div class="result_btns">
                         <button class="result_btn" type="button">
-                            <span>다른 사진도 해보기</span>
+                            <a href="/" class="result_btn_link">다른 사진도 해보기</a>
                         </button>
                         <button class="result_btn" type="button">
-                            <span>친구들에게 공유하기</span>
+                            <span class="result_btn_link">친구들에게 공유하기</span>
                         </button>
                     </div>
                     <div class="combi">
                         <div class="combi_inner">
                             <div class="combi_inner_img">
-                                <img src="./asset/img/image-2.png" alt="">
+                                <img src="./asset/img/image-3.png" alt="image-3">
                             </div>
                             <div class="combi_inner_type">
                                 상극인 고래 유형
@@ -121,10 +156,10 @@
                         </div>
                         <div class="combi_inner">
                             <div class="combi_inner_img">
-                                <img src="./asset/img/image-3.png" alt="">
+                                <img src="./asset/img/image-1.png" alt="image-1">
                             </div>
                             <div class="combi_inner_type">
-                                상극인 고래 유형
+                                잘맞는 고래 유형
                             </div>
                         </div>
                     </div>
