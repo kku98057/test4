@@ -24,14 +24,16 @@ section {
   justify-content: center;
 }
 section > .container {
-  padding: 136px 48px 80px 48px;
+  padding: 67px 48px 67px 48px;
 }
 .logo {
   text-align: center;
   font-size: 46.2px;
   font-weight: bold;
+  margin-bottom: 21px;
   color: #2666bc;
 }
+
 .container {
   width: 100%;
   height: 100%;
@@ -51,7 +53,7 @@ section > .container {
   /* display: none; */
 }
 .monitor_con {
-  /* background-color: #f2f2f2; */
+  background-color: #f2f2f2;
 }
 .monitor_img_title {
   text-align: center;
@@ -266,7 +268,7 @@ section > .container {
   padding: 12px 19px;
   outline: 0;
   border: 0;
-  border-radius: 17.6px;
+  border-radius: 44px;
   background-color: #2666bc;
   flex: 1;
   height: 44px;
