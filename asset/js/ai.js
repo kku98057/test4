@@ -2,7 +2,7 @@
 // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
 // the link to your model provided by Teachable Machine export panel
-const URL = "https://teachablemachine.withgoogle.com/models/tFfA8oqgh/";
+const URL = "https://teachablemachine.withgoogle.com/models/sop4qiCOL/";
 
 let model, webcam, labelContainer, maxPredictions, prediction;
 
@@ -27,9 +27,6 @@ async function predict() {
   const image = document.querySelector("#faceImg");
   const prediction = await model.predict(image, false);
   labelContainer = document.getElementById("label-container");
-  let maxTopPrediction = [...prediction].sort((a, b) => {
-    return b.probability - a.probability;
-  });
 
   //   key,text 추가
 
@@ -38,19 +35,22 @@ async function predict() {
     predic.text = infoList[index].text;
     predic.key = index;
   });
+  let maxTopPrediction = [...prediction].sort((a, b) => {
+    return b.probability - a.probability;
+  });
 
   for (let i = 0; i < 4; i++) {
     const labelClass = document.createElement("div");
 
     labelContainer.append(labelClass);
     const classPrediction = `
-    <div class="pointText">${maxTopPrediction[i].className}</div>
-    <div class="pointDiv">
-    
-    </div>
-    <div class="pointNub">${Math.round(
+    <div class="pointText">${maxTopPrediction[i].className}  ${Math.round(
       maxTopPrediction[i].probability * 100
-    )}%</div>`;
+    )}%</div>
+    <div class="pointDiv">
+  
+    </div>
+    <div class="pointNub"></div>`;
 
     labelClass.className = "label_class";
 
@@ -72,14 +72,14 @@ async function predict() {
 
   //   가장 큰 수
 
-  let maxNub = prediction.reduce((pre, next) => {
+  let maxNub = maxTopPrediction.reduce((pre, next) => {
     return pre.probability < next.probability ? next : pre;
   });
 
   const resultImg = document.querySelector("#resultImg");
-  const imgSrc = `./asset/img/image-${maxNub.key}.png`;
+  const imgSrc = `./asset/img/image-${maxTopPrediction[0].key}.png`;
   resultImg.src = imgSrc;
-  resultImg.alt = maxNub.key;
+  resultImg.alt = maxTopPrediction[0].key;
 
   // title,text
   // title
