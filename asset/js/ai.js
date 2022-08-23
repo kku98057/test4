@@ -77,7 +77,7 @@ async function predict() {
   });
 
   const resultImg = document.querySelector("#resultImg");
-  const imgSrc = `./asset/img/image-${maxTopPrediction[0].key}.png`;
+  const imgSrc = `./asset/img/image-${maxTopPrediction[0].key}.jpg`;
   resultImg.src = imgSrc;
   resultImg.alt = maxTopPrediction[0].key;
 
@@ -120,23 +120,15 @@ function handleSelected(e) {
     upImgText.style.display = "block";
     upImgText.innerHTML = "이미지를 인식 중 입니다.<br> 잠시만 기다려주세요.";
     init().then(() => {
-      startBtn.style.display = "flex";
-      setTimeout(() => {
-        startBtn.style.transition = "opacity 0.3s";
-        startBtn.style.opacity = 1;
-      }, 500);
-
-      upImgText.innerHTML = "스타트 버튼을 클릭해주세요.";
+      predict();
+      startHandler();
     });
   }
 }
 
 fileInput.addEventListener("change", handleSelected);
 
-startBtn.addEventListener("click", startBtnHandler);
-
-function startBtnHandler() {
-  upImgText.innerHTML = `데이터를 받아오고 있습니다.<br> 잠시만 기다려주세요`;
+function startHandler() {
   setTimeout(() => {
     predict();
     uploadPage.style.transition = "all 0.3s";
@@ -166,4 +158,8 @@ function genderBtnHandler() {
   });
 }
 
-//
+const closeBtn = document.querySelector(".closeBtn");
+const ad = document.querySelector(".ad");
+closeBtn.addEventListener("click", () => {
+  ad.style.display = "none";
+});
