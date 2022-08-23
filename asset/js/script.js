@@ -18,13 +18,13 @@ tl.to(".loading", {
     "-=1"
   )
   .from("#logo", {
-    scale: 2,
+    scale: 1.2,
     duration: 0.5,
   })
   .to(
     "#logo",
     {
-      top: 50,
+      top: 40,
       duration: 0.5,
     },
     ">-=0.5"
