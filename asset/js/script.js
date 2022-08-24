@@ -21,10 +21,10 @@ tl.to(".loading", {
     scale: 1.2,
     duration: 0.5,
   })
-  .to(
+  .from(
     "#logo",
     {
-      top: 40,
+      top: "40vh",
       duration: 0.5,
     },
     ">-=0.5"

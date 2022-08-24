@@ -67,7 +67,7 @@ section > .container {
 }
 #logo {
   overflow: hidden;
-  position: absolute;
+  position: relative;
 }
 .logo {
   margin-bottom: 15px;
@@ -111,15 +111,18 @@ section > .container {
   justify-content: center;
 }
 .monitor_img_title_h {
-  width: 311px;
+  width: 90%;
+  max-width: 431px;
   color: #1d1d1d;
   margin-bottom: 12px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 .monitor_img_title_p {
   overflow: hidden;
 }
 .monitor_img_title_p span {
-  font-size: 14.7px;
+  font-size: 21px;
   font-weight: bold;
   color: #2666bc;
 }
@@ -162,7 +165,7 @@ section > .container {
   transform: translate(-29px, -50%);
 }
 .gender_img {
-  width: 15px;
+  width: 25px;
 }
 .gender_img.active {
   filter: grayscale(1);
@@ -182,7 +185,7 @@ section > .container {
 }
 
 .upImgText {
-  margin: 50px 0;
+  margin-top: 50px;
   text-align: center;
   display: none;
   font-size: 18px;
@@ -205,9 +208,12 @@ section > .container {
   margin-top: 5px;
   font-size: 20px;
 }
-
+.upImg_loading {
+  width: 50px;
+  display: none;
+}
 .monitor_share {
-  margin-top: 40px;
+  margin-top: 20px;
   cursor: pointer;
 }
 .kakaoShareBtn {
@@ -275,6 +281,7 @@ section .result_conwrap {
 }
 .result_title_p3 {
   width: 100%;
+  min-height: 150px;
   margin: 0 auto;
   max-width: 383px;
   font-size: 22px;
@@ -418,5 +425,13 @@ section .result_conwrap {
   }
   .result_title_p3 {
     font-size: 18px;
+  }
+}
+@media all and (max-width: 440px) {
+  .monitor_img_title {
+    margin-top: 0px;
+  }
+  .monitor_img_title_p span {
+    font-size: 14.7px;
   }
 }

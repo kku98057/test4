@@ -48,7 +48,6 @@ async function predict() {
       maxTopPrediction[i].probability * 100
     )}%</div>
     <div class="pointDiv">
-  
     </div>
     <div class="pointNub"></div>`;
 
@@ -95,6 +94,7 @@ const upImgText = document.querySelector(".upImgText");
 const startBtn = document.querySelector(".upBtn");
 const uploadPage = document.querySelector(".monitor_img");
 const resultPage = document.querySelector(".result");
+const upImgLoading = document.querySelector(".upImg_loading");
 
 const reader = new FileReader();
 
@@ -119,6 +119,7 @@ function handleSelected(e) {
     reader.readAsDataURL(selectedFile);
     upImgText.style.display = "block";
     upImgText.innerHTML = "이미지를 인식 중 입니다.<br> 잠시만 기다려주세요.";
+    upImgLoading.style.display = "block";
     init().then(() => {
       predict();
       startHandler();
