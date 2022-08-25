@@ -1,4 +1,7 @@
 Splitting();
+const windowHeight = document
+  .querySelector(".monitor_img")
+  .getBoundingClientRect().height;
 const tl = gsap.timeline();
 
 tl.to(".loading", {
@@ -24,7 +27,7 @@ tl.to(".loading", {
   .from(
     "#logo",
     {
-      top: "40vh",
+      top: windowHeight / 5,
       duration: 0.5,
     },
     ">-=0.5"
