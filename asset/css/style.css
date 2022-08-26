@@ -180,18 +180,22 @@ section > .container {
 .monitor_share {
   width: 100%;
   max-width: 363px;
-  height: 33px;
+  height: 80px;
   margin-top: 25px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 .kakaoShareBtn {
   cursor: pointer;
 }
 .monitor_share_title {
   width: 100%;
-  height: 100%;
-
+  height: 33px;
   display: flex;
+
   align-items: center;
   background-color: #2666bc;
   border-radius: 30px;
@@ -297,7 +301,9 @@ section .result_conwrap {
 .result_btns {
   display: flex;
   width: 400px;
-  gap: 32px;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 0px;
 }
 
 .result_btn {
@@ -306,7 +312,8 @@ section .result_conwrap {
   border: 0;
   border-radius: 44px;
   background-color: #2666bc;
-  flex: 1;
+  flex-grow: 1;
+  flex-basis: 195px;
   height: 44px;
   display: flex;
   align-items: center;
@@ -348,6 +355,20 @@ section .result_conwrap {
   color: #fff;
   margin-top: 15px;
 }
+/* footer */
+footer {
+  width: 100%;
+  height: 120px;
+}
+.footer_con {
+}
+.copyright p {
+  color: #1d1d1d;
+  font-size: 14px;
+  text-align: center;
+  font-family: "GongGothicLight";
+  margin-bottom: 5px;
+}
 
 @media all and (max-width: 979px) {
   section > .container {
@@ -386,7 +407,6 @@ section .result_conwrap {
 @media all and (max-width: 640px) {
   .result_btns {
     width: 100%;
-    flex-direction: column;
   }
   #label-container {
     padding: 24px 10px;
