@@ -15,76 +15,9 @@ body {
   top: 0;
   left: 0;
   background-color: #2666bc;
-  z-index: 99;
-}
-/* ad */
-.google_ad {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #1d1d1d2f;
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-.google_adWrap {
-  width: 30vw;
-  height: 30vw;
-  max-width: 300px;
-  max-height: 300px;
-  position: relative;
-}
-.closeBtn {
-  cursor: pointer;
-  position: absolute;
-  font-family: var(--pyeongChang-peace);
-  top: 5px;
-  right: 5px;
-  color: #fff;
-  font-size: 35px;
+  z-index: 9339;
 }
 
-/* header */
-header {
-  width: 100%;
-  height: 85px;
-  position: sticky;
-
-  top: 0%;
-  z-index: 10;
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
-  z-index: 999;
-}
-header > .header_con {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  background-color: transparent;
-}
-.mainlogo {
-  width: 150px;
-}
-.menuBtn {
-  width: 26px;
-  height: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-.menuBtn_bar {
-  width: 100%;
-  height: 2px;
-  background-color: #2666bc;
-  border-radius: 2px;
-}
-.bar3 {
-  width: 60%;
-}
 section {
   width: 100%;
   height: auto;
@@ -113,7 +46,7 @@ section > .container {
   font-family: var(--pyeongChang-peace);
 }
 .wrap {
-  height: 100%;
+  height: auto;
 }
 .container {
   width: 100%;

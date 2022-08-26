@@ -20,6 +20,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./asset/css/reset.css">
     <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="stylesheet" href="./asset/css/header.css">
+    <link rel="stylesheet" href="./asset/css/ad.css">
     <link rel="stylesheet" href="./asset/css/splitting.css">
     <link rel="stylesheet" href="./asset/css/splitting-cells.css">
     <script src="./asset/js/gsap.min.js"></script>
@@ -37,6 +39,7 @@
         Kakao.isInitialized();
     </script>
 
+
     <title>나의 고래성향 테스트</title>
 </head>
 
@@ -45,7 +48,9 @@
         <header>
             <div class="container header_con">
                 <div class="mainlogo">
-                    <img src="./asset/img/logo.png" alt="logo">
+                    <a href="/">
+                        <img src="./asset/img/logo.png" alt="logo">
+                    </a>
                 </div>
                 <div class="menuBtn">
                     <div class="menuBtn_bar bar1"></div>
@@ -144,15 +149,20 @@
                 </div>
             </div>
         </div>
+        <div class="kakao_ad">
+            <div class="container kakao_con">
+
+            </div>
+        </div>
     </div>
-    <div class="kakao_ad">
-        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-M06o3eMV1fIJv7en" data-ad-width="728"
-            data-ad-height="90"></ins>
-    </div>
+
+
+    <script src="./asset/js/ad.js"></script>
     <script src="./asset/js/data.js"></script>
     <script src="./asset/js/ai.js"></script>
     <script src="./asset/js/share.js"></script>
     <script src="./asset/js/script.js"></script>
+    <script src="./asset/js/header.js"> </script>
 
 </body>
 

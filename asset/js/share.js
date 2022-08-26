@@ -1,4 +1,4 @@
-const mainAddress = `http://chosunhangout.dothome.co.kr/`;
+const mainAddress = `http://hoowoom.com/`;
 
 function mainKakaoShare() {
   Kakao.Share.sendDefault({
@@ -26,7 +26,7 @@ function mainKakaoShare() {
 }
 function resultKakaoShare() {
   const nowPage = resultImg.alt - 1;
-  const address = `http://chosunhangout.dothome.co.kr/page/page_${nowPage}.html`;
+  const address = `http://hoowoom.com/page/page_${nowPage}.html`;
 
   Kakao.Share.sendDefault({
     objectType: "feed",
