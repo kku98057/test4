@@ -164,14 +164,3 @@ const ad = document.querySelector(".ad");
 closeBtn.addEventListener("click", () => {
   ad.style.display = "none";
 });
-
-// 링크복사하기
-
-const linkShares = document.querySelectorAll(".linkShare");
-linkShares.forEach((linkShare) => {
-  linkShare.addEventListener("click", () => {
-    window.navigator.clipboard.writeText("http://hoowoom.com/").then(() => {
-      alert("주소가 복사되었어요!");
-    });
-  });
-});
