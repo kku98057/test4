@@ -159,8 +159,8 @@ function genderBtnHandler() {
   });
 }
 
-const closeBtn = document.querySelector(".closeBtn");
-const ad = document.querySelector(".ad");
-closeBtn.addEventListener("click", () => {
-  ad.style.display = "none";
-});
+// const closeBtn = document.querySelector(".closeBtn");
+// const ad = document.querySelector(".ad");
+// closeBtn.addEventListener("click", () => {
+//   ad.style.display = "none";
+// });

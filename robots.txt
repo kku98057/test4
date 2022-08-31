@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /
+
+
+Sitemap: http://www.hoowoom.com/my_sitemap.xml
